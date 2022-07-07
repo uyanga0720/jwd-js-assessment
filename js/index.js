@@ -115,14 +115,17 @@ window.addEventListener('DOMContentLoaded', () => {
                     <li class="list-group-item"  id="li_${index}_3"><input type="radio" name="radio${index}" id="radio_${index}_3"> ${quizItem.o[3]}</li>
                     </ul>
                     <div>&nbsp;</div>`;
-      quizWrap.innerHTML = quizDisplay;
+      quizWrap.innerHTML = quizDisplay+ submit;
     });
+    // task2
+    quizWrap.addEventListener('submit', calculateScore);
   };
 
   // Calculate the score
  
   const calculateScore = () => {
   var score = 0;
+  let result = document.querySelector('#score');
 
     quizArray.map((quizItem, index) => {
       for (let i = 0; i < 4; i++) {
