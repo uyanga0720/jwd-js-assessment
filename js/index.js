@@ -26,10 +26,30 @@ window.addEventListener('DOMContentLoaded', () => {
     start.style.display = 'none';
   });
 
-  /****ADD TIMER***** */
+  /**************ADD TIMER*************/
 
 
-  
+
+  const startingMinutes = 1;
+  let time =startingMinutes *60; //total in seconds
+
+  const countdownElement = document.getElementById('time');
+
+  setInterval(updateCountdown, 1000);
+  function updateCountdown(){
+  const minutes = Math.floor(time/60);
+  let seconds =time % 60; //remaining seconds
+
+  seconds =seconds < 10 ? '0'+seconds : seconds; // give us 2:00 2 digits seconds
+
+  countdownElement.innerHTML = `${minutes}:${seconds}`;
+  time --;
+   }
+   
+
+
+  /**************END TIMER*************/
+
   // quizArray QUESTIONS & ANSWERS
   // q = QUESTION, o = OPTIONS, a = CORRECT ANSWER
   // Basic ideas from https://code-boxx.com/simple-javascript-quiz/
@@ -45,12 +65,12 @@ window.addEventListener('DOMContentLoaded', () => {
       a: 1,
     },
     {
-      q: 'What is the largest country in Africa',
+      q: 'What is the largest country in Africa?',
       o: ['Egypt', 'Algeria', 'Moroco', 'Togo'],
       a: 1,
     },
     {
-      q: 'What is the capital of Mongolia',
+      q: 'What is the capital of Mongolia?',
       o: ['Beijing', 'Ulaanbaatar', 'Warsaw', 'Lapaz'],
       a: 1,
     },
@@ -94,6 +114,7 @@ window.addEventListener('DOMContentLoaded', () => {
         }
 
         if (radioElement.checked) {
+          score++;
           // code for task 1 goes here
         }
       }
@@ -102,4 +123,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // call the displayQuiz function
   displayQuiz();
+  //Reset Button
+  let resetBtn = document.querySelector('#btnReset');
+  resetBtn.addEventListener('click',function(){
+    window.location.reload()
+  })
 });
