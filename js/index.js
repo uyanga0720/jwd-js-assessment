@@ -30,18 +30,28 @@ window.addEventListener('DOMContentLoaded', () => {
   // Basic ideas from https://code-boxx.com/simple-javascript-quiz/
   const quizArray = [
     {
-      q: 'Which is the third planet from the sun?',
-      o: ['Saturn', 'Earth', 'Pluto', 'Mars'],
+      q: 'Which country has the longest coastline in the world?',
+      o: ['Chile', 'Canada', 'Australia', 'China'],
       a: 1, // array index 1 - so Earth is the correct answer here
     },
     {
-      q: 'Which is the largest ocean on Earth?',
-      o: ['Atlantic Ocean', 'Indian Ocean', 'Arctic Ocean', 'Pacific Ocean'],
-      a: 3,
+      q: 'Which country has more lakes than the rest of the world combined?',
+      o: ['Mongolia', 'Canada', 'Russia', 'Bolivia'],
+      a: 1,
     },
     {
-      q: 'What is the capital of Australia',
-      o: ['Sydney', 'Canberra', 'Melbourne', 'Perth'],
+      q: 'What is the largest country in Africa',
+      o: ['Egypt', 'Algeria', 'Moroco', 'Togo'],
+      a: 1,
+    },
+    {
+      q: 'What is the capital of Mongolia',
+      o: ['Beijing', 'Ulaanbaatar', 'Warsaw', 'Lapaz'],
+      a: 1,
+    },
+    {
+      q: 'What is the largest landlocked country? ',
+      o: ['Vatican', 'Kazakhstan', 'Australia', 'Turkey'],
       a: 1,
     },
   ];
