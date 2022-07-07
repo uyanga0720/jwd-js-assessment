@@ -161,8 +161,8 @@ window.addEventListener('DOMContentLoaded', () => {
   // call the displayQuiz function
   displayQuiz();
   //Reset Button
-  // let resetBtn = document.querySelector('#btnReset');
-  // resetBtn.addEventListener('click',function(){
-  //   window.location.reload()
-  // })
+  let resetBtn = document.querySelector('#btnReset');
+  resetBtn.addEventListener('click',function(){
+    window.location.reload()
+  })
 });
