@@ -21,10 +21,20 @@
 
 window.addEventListener('DOMContentLoaded', () => {
   const start = document.querySelector('#start');
-  start.addEventListener('click', function (e) {
+  start.addEventListener('click', function(e){
     document.querySelector('#quizBlock').style.display = 'block';
     start.style.display = 'none';
   });
+  const submit = document.querySelector('#btnSubmit');
+  submit.addEventListener('click',function(e){
+    var result = document.getElementById("score");
+    result.innerHTML = "<h2> You scored : </h2>" + score;
+  });
+  // submit.addEventListener('click',calculateScore() );
+
+  
+
+
 
   /**************ADD TIMER*************/
 
@@ -80,11 +90,14 @@ window.addEventListener('DOMContentLoaded', () => {
       a: 1,
     },
   ];
+  var answers = ['b','b','b','b','b'];
+
 
   // function to Display the quiz questions and answers from the object
   const displayQuiz = () => {
     const quizWrap = document.querySelector('#quizWrap');
     let quizDisplay = '';
+    let submit = 
     quizArray.map((quizItem, index) => {
       quizDisplay += `<ul class="list-group">
                    Q - ${quizItem.q}
@@ -99,8 +112,10 @@ window.addEventListener('DOMContentLoaded', () => {
   };
 
   // Calculate the score
+ 
   const calculateScore = () => {
-    let score = 0;
+  var score = 0;
+
     quizArray.map((quizItem, index) => {
       for (let i = 0; i < 4; i++) {
         //highlight the li if it is the correct answer
@@ -108,14 +123,24 @@ window.addEventListener('DOMContentLoaded', () => {
         let r = `radio_${index}_${i}`;
         liElement = document.querySelector('#' + li);
         radioElement = document.querySelector('#' + r);
+        
 
-        if (quizItem.a == i) {
+        if(radioElement.checked  === 0){
+          e.preventDefault();
+        }
+
+        if (quizItem.a === i) {
           //change background color of li element here
+          liElement.style.backgroundColor='green';
+          radioElement.value= 'true';
         }
 
         if (radioElement.checked) {
           score++;
+          // result.innerHTML = "Your Score "+ score;
+
           // code for task 1 goes here
+      
         }
       }
     });
