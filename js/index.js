@@ -25,11 +25,11 @@ window.addEventListener('DOMContentLoaded', () => {
     document.querySelector('#quizBlock').style.display = 'block';
     start.style.display = 'none';
   });
-  const submit = document.querySelector('#btnSubmit');
-  submit.addEventListener('click',function(e){
-    var result = document.getElementById("score");
-    result.innerHTML = "<h2> You scored : </h2>" + score;
-  });
+  // const submit = document.querySelector('#btnSubmit');
+  // submit.addEventListener('click',function(e){
+  //   var result = document.getElementById("score");
+  //   result.innerHTML = "<h2> You scored : </h2>" + score;
+  // });
   // submit.addEventListener('click',calculateScore() );
 
   
@@ -124,7 +124,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // Calculate the score
  
   const calculateScore = () => {
-  var score = 0;
+ let score = 0;
   let result = document.querySelector('#score');
 
     quizArray.map((quizItem, index) => {
@@ -136,7 +136,7 @@ window.addEventListener('DOMContentLoaded', () => {
         radioElement = document.querySelector('#' + r);
         
 
-        if(radioElement.checked  === 0){
+        if(radioElement.checked  >= 0){
           e.preventDefault();
         }
 
@@ -148,7 +148,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
         if (radioElement.checked) {
           score++;
-          // result.innerHTML = "Your Score "+ score;
+          result.innerHTML = "Your Score "+ score;
+
 
           // code for task 1 goes here
       
@@ -160,8 +161,8 @@ window.addEventListener('DOMContentLoaded', () => {
   // call the displayQuiz function
   displayQuiz();
   //Reset Button
-  let resetBtn = document.querySelector('#btnReset');
-  resetBtn.addEventListener('click',function(){
-    window.location.reload()
-  })
+  // let resetBtn = document.querySelector('#btnReset');
+  // resetBtn.addEventListener('click',function(){
+  //   window.location.reload()
+  // })
 });
