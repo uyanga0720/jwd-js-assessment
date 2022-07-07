@@ -90,14 +90,22 @@ window.addEventListener('DOMContentLoaded', () => {
       a: 1,
     },
   ];
-  var answers = ['b','b','b','b','b'];
+  
 
 
   // function to Display the quiz questions and answers from the object
   const displayQuiz = () => {
     const quizWrap = document.querySelector('#quizWrap');
     let quizDisplay = '';
-    let submit = 
+    let submit = `<div>
+    <button type="button" class="btn btn-primary" id="btnSubmit">
+      Submit Quiz
+    </button>
+    <button type="button" class="btn btn-primary" id="btnReset">
+      Reset Quiz
+    </button>
+    <span id="score"></span>
+  </div>`;
     quizArray.map((quizItem, index) => {
       quizDisplay += `<ul class="list-group">
                    Q - ${quizItem.q}
